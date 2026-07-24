@@ -1,6 +1,6 @@
 :root {
-    --container-max: 800px;
-    --container-pad: 20px;
+    --container-max: 900px;
+    --container-pad: 10px;
     --side-inset: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
     --header-height: 90px;
     --logo-top: 0px;
