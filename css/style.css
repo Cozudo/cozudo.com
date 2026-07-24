@@ -4,7 +4,7 @@
     --side-inset: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
     --header-height: 90px;
     --logo-top: 0px;
-    --text-top: 10px;
+    --text-top: 20px;
 }
 
 .logo-link {
