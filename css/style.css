@@ -1,10 +1,22 @@
 :root {
     --container-max: 900px;
-    --container-pad: 10px;
-    --side-inset: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+    --container-pad: 20px;
     --header-height: 90px;
-    --logo-top: 0px;
-    --text-top: 20px;
+    --logo-top: 5px;
+    --text-top: 10px;
+
+    /* where body text naturally starts, ignoring the logo entirely */
+    --natural-inset: max(var(--container-pad), calc((100vw - var(--container-max)) / 2 + var(--container-pad)));
+
+    /* logo's box width: never smaller than the logo, so it can't overflow */
+    --side-inset: max(var(--header-height), var(--natural-inset));
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: var(--container-max);
+    margin: 0 auto 40px;
+    padding: 0 var(--container-pad);
 }
 
 .logo-link {
@@ -20,14 +32,15 @@
 
 .logo-link img {
     display: block;
+    width: 90px;
+    height: 90px;
 }
 
 .container h1:first-child {
     margin: 0;
     margin-top: var(--text-top);
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
+    margin-left: calc(var(--side-inset) - var(--natural-inset));
+    padding-top: calc((var(--header-height) - 1em * 1.2) / 2);
 }
 
 body {
@@ -47,7 +60,7 @@ body {
     padding: 0 var(--container-pad);
 }
 
-h2 {
+h3 {
     margin-top: 2em;
 }
 
